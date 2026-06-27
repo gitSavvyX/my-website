@@ -62,7 +62,9 @@
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 1.2rem 4rem;
     background: rgba(6,8,16,0.8);
     backdrop-filter: blur(20px);
@@ -334,8 +336,27 @@
 
   /* Responsive */
   @media (max-width: 900px) {
-    nav { padding: 1rem 2rem; }
-    .nav-links { display: none; }
+    nav { 
+      padding: 1rem 2rem; 
+      flex-wrap: wrap; 
+      gap: 1rem; 
+    }
+    
+    .nav-links { 
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: center; 
+      gap: 1rem; 
+      width: 100%; 
+      order: 3;
+    }
+    .nav-links a {
+      font-size: 0.6rem;
+    }
+    
+    body { cursor: default; }
+    .cursor, .cursor-ring { display: none; }
+    
     section { padding: 4rem 2rem; }
     #approach { padding-top: 6rem; }
     .approach-layout { grid-template-columns: 1fr; gap: 2rem; }

@@ -62,7 +62,9 @@
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 1.2rem 4rem;
     background: rgba(6,8,16,0.8);
     backdrop-filter: blur(20px);
@@ -656,8 +658,29 @@
     .why-grid { grid-template-columns: repeat(3, 1fr); }
   }
   @media (max-width: 900px) {
-    nav { padding: 1rem 2rem; }
-    .nav-links { display: none; }
+    nav { 
+      padding: 1rem 2rem; 
+      flex-wrap: wrap; 
+      gap: 1rem; 
+    }
+    
+    /* SHOW the navigation links on mobile (stack them neatly) */
+    .nav-links { 
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: center; 
+      gap: 1rem; 
+      width: 100%; 
+      order: 3;
+    }
+    .nav-links a {
+      font-size: 0.6rem;
+    }
+    
+    /* IMPORTANT: Hide the custom cursor on mobile */
+    body { cursor: default; }
+    .cursor, .cursor-ring { display: none; }
+
     .hero { grid-template-columns: 1fr; padding: 7rem 2rem 3rem; }
     .hero-visual { display: none; }
     .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2rem; }
@@ -679,9 +702,7 @@
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#">MTI <span>—</span></a>
-  
-
+  <a class="nav-logo" href="index.html">MTI <span>—</span></a>
   <ul class="nav-links">
     <li><a href="services.html">Services</a></li>
     <li><a href="approach.html">Approach</a></li>
@@ -690,10 +711,7 @@
     <li><a href="services.html">Capabilities</a></li>
   </ul>
   <a href="contact.html" class="nav-cta">Contact Us</a>
-
 </nav>
-
-
 
 <!-- HERO -->
 <section class="hero">
@@ -710,8 +728,8 @@
     </h1>
     <p class="hero-sub">Transforming organizations through precision, clarity &amp; intelligent technology. We specialize in enterprise transformation, M&amp;A integration, workflow automation, and secure IT delivery.</p>
     <div class="hero-actions">
-      <a href="#services" class="btn-primary">Explore Services</a>
-      <a href="#approach" class="btn-ghost">Our Approach</a>
+      <a href="services.html" class="btn-primary">Explore Services</a>
+      <a href="approach.html" class="btn-ghost">Our Approach</a>
     </div>
   </div>
 
@@ -1392,7 +1410,7 @@
   <p>From strategy to execution — MTI delivers the precision your transformation demands.</p>
   <div class="cta-actions">
     <a href="mailto:contact@mti.com" class="btn-primary">Start a Conversation</a>
-    <a href="#services" class="btn-ghost">View All Services</a>
+    <a href="services.html" class="btn-ghost">View All Services</a>
   </div>
 </div>
 
@@ -1400,26 +1418,26 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <a class="nav-logo" href="#">MTI <span>—</span></a>
+      <a class="nav-logo" href="index.html">MTI <span>—</span></a>
       <p>Modern Technology Integrators. Transforming organizations through precision, clarity, and intelligent technology delivery.</p>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
-        <li><a href="#services">IT Program Management</a></li>
-        <li><a href="#services">M&A Integration</a></li>
-        <li><a href="#services">Workflow Automation</a></li>
-        <li><a href="#services">ERP / CRM</a></li>
-        <li><a href="#services">Cybersecurity</a></li>
+        <li><a href="services.html">IT Program Management</a></li>
+        <li><a href="services.html">M&A Integration</a></li>
+        <li><a href="services.html">Workflow Automation</a></li>
+        <li><a href="services.html">ERP / CRM</a></li>
+        <li><a href="services.html">Cybersecurity</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="#approach">Our Approach</a></li>
-        <li><a href="#why">Why MTI</a></li>
-        <li><a href="#industries">Industries</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="approach.html">Our Approach</a></li>
+        <li><a href="index.html#why">Why MTI</a></li>
+        <li><a href="index.html#industries">Industries</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
