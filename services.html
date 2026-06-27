@@ -105,8 +105,12 @@
   }
   .nav-cta:hover { background: var(--gold); transform: translateY(-1px); }
 
-  /* SECTIONS */
-  section { padding: 6rem 4rem; }
+  /* SECTIONS (FIX: Added scroll-margin-top) */
+  section {
+    padding: 6rem 4rem;
+    scroll-margin-top: 100px; /* Prevents navbar from covering section titles when scrolling */
+  }
+
   .section-tag {
     font-family: 'Space Mono', monospace;
     font-size: 0.62rem;
@@ -415,8 +419,12 @@
     body { cursor: default; }
     .cursor, .cursor-ring { display: none; }
     
-    section { padding: 4rem 2rem; }
-    #services { padding-top: 6rem; }
+    section { 
+      padding: 7rem 2rem 4rem; 
+    }
+    #services { padding-top: 8rem; }
+    #services-detail { padding-top: 6rem; }
+    
     .services-grid { grid-template-columns: 1fr 1fr; }
     .footer-top { grid-template-columns: 1fr 1fr; }
     .acc-list { grid-template-columns: 1fr; }

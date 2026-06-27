@@ -105,6 +105,11 @@
   }
   .nav-cta:hover { background: var(--gold); transform: translateY(-1px); }
 
+  /* SECTIONS (FIX: Added scroll-margin-top) */
+  section {
+    scroll-margin-top: 100px;
+  }
+
   /* CONTACT HERO */
   .hero {
     min-height: 80vh;
@@ -328,7 +333,10 @@
     body { cursor: default; }
     .cursor, .cursor-ring { display: none; }
     
-    .hero { padding: 7rem 2rem 3rem; }
+    .hero { 
+      padding: 9rem 2rem 3rem; 
+      min-height: 70vh;
+    }
     .contact-info { padding: 3rem 2rem; }
     .contact-grid { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr 1fr; }
@@ -436,7 +444,6 @@
 </footer>
 
 <script>
-  // Custom cursor
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
   document.addEventListener('mousemove', e => {

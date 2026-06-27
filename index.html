@@ -105,6 +105,12 @@
   }
   .nav-cta:hover { background: var(--gold); transform: translateY(-1px); }
 
+  /* SECTIONS (FIX: Added scroll-margin-top) */
+  section {
+    padding: 6rem 4rem;
+    scroll-margin-top: 100px; /* Prevents navbar from covering section titles when scrolling */
+  }
+
   /* HERO */
   .hero {
     min-height: 100vh;
@@ -236,32 +242,6 @@
     text-transform: uppercase;
     color: var(--muted);
     margin-top: 0.3rem;
-  }
-
-  /* SECTIONS */
-  section { padding: 6rem 4rem; }
-  .section-tag {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.3em;
-    color: var(--accent);
-    text-transform: uppercase;
-    margin-bottom: 0.8rem;
-  }
-  .section-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.5rem, 4vw, 4.5rem);
-    line-height: 1;
-    letter-spacing: 0.02em;
-    margin-bottom: 1rem;
-  }
-  .section-title em { color: var(--accent); font-style: normal; }
-  .section-sub {
-    color: var(--muted);
-    font-size: 1rem;
-    line-height: 1.7;
-    max-width: 560px;
-    margin-bottom: 3rem;
   }
 
   /* WHAT WE DO */
@@ -664,7 +644,6 @@
       gap: 1rem; 
     }
     
-    /* SHOW the navigation links on mobile (stack them neatly) */
     .nav-links { 
       display: flex; 
       flex-wrap: wrap; 
@@ -677,14 +656,23 @@
       font-size: 0.6rem;
     }
     
-    /* IMPORTANT: Hide the custom cursor on mobile */
     body { cursor: default; }
     .cursor, .cursor-ring { display: none; }
 
-    .hero { grid-template-columns: 1fr; padding: 7rem 2rem 3rem; }
+    /* FIX: Increased padding to clear the taller nav */
+    .hero { 
+      padding: 9rem 2rem 3rem; 
+      grid-template-columns: 1fr; 
+    }
     .hero-visual { display: none; }
+    section { 
+      padding: 7rem 2rem 4rem; 
+    }
+    #services { padding-top: 8rem; }
+    #approach { padding-top: 8rem; }
+    #services-detail { padding-top: 6rem; }
+    
     .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 2rem; }
-    section { padding: 4rem 2rem; }
     .services-grid { grid-template-columns: 1fr 1fr; }
     .approach-layout { grid-template-columns: 1fr; gap: 2rem; }
     .approach-visual { display: none; }

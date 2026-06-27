@@ -105,8 +105,12 @@
   }
   .nav-cta:hover { background: var(--gold); transform: translateY(-1px); }
 
-  /* SECTIONS */
-  section { padding: 6rem 4rem; }
+  /* SECTIONS (FIX: Added scroll-margin-top) */
+  section {
+    padding: 6rem 4rem;
+    scroll-margin-top: 100px;
+  }
+
   .section-tag {
     font-family: 'Space Mono', monospace;
     font-size: 0.62rem;
@@ -176,7 +180,7 @@
     display: flex; align-items: center; justify-content: center;
   }
 
-  /* WHY US (keeping this as extra content for the Approach page) */
+  /* WHY US */
   #why {
     background: var(--bg);
     padding-top: 4rem;
@@ -357,8 +361,12 @@
     body { cursor: default; }
     .cursor, .cursor-ring { display: none; }
     
-    section { padding: 4rem 2rem; }
-    #approach { padding-top: 6rem; }
+    section { 
+      padding: 7rem 2rem 4rem; 
+    }
+    #approach { padding-top: 8rem; }
+    #why { padding-top: 5rem; }
+    
     .approach-layout { grid-template-columns: 1fr; gap: 2rem; }
     .approach-visual { display: none; }
     .why-grid { grid-template-columns: repeat(2, 1fr); }
@@ -432,55 +440,35 @@
             <stop offset="100%" stop-color="#00e5ff"/>
           </linearGradient>
         </defs>
-        <!-- Outermost square -->
         <rect x="20" y="20" width="360" height="360" fill="none" stroke="rgba(0,229,255,0.07)" stroke-width="1"/>
-        <!-- Pipeline flow diagram -->
-        <!-- Stage boxes -->
         <g>
-          <!-- Stage 1 -->
           <rect x="50" y="60" width="130" height="60" fill="rgba(12,18,32,0.9)" stroke="#7b4fff" stroke-width="1.5" rx="1"/>
           <text x="115" y="85" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="14" fill="#7b4fff" letter-spacing="2">DISCOVER</text>
           <text x="115" y="103" text-anchor="middle" font-family="Space Mono,monospace" font-size="7.5" fill="#6b7a99" letter-spacing="1">Goals &amp; Constraints</text>
-
-          <!-- Arrow 1 -->
           <path d="M180 90 L220 90" stroke="url(#pipe1)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
           <defs>
             <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
               <polygon points="0 0, 6 3, 0 6" fill="#00e5ff"/>
             </marker>
           </defs>
-
-          <!-- Stage 2 -->
           <rect x="220" y="60" width="130" height="60" fill="rgba(12,18,32,0.9)" stroke="#00e5ff" stroke-width="1.5" rx="1"/>
           <text x="285" y="85" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="14" fill="#00e5ff" letter-spacing="2">STRATEGIZE</text>
           <text x="285" y="103" text-anchor="middle" font-family="Space Mono,monospace" font-size="7.5" fill="#6b7a99" letter-spacing="1">Roadmap &amp; Risk</text>
-
-          <!-- Down arrow right -->
           <path d="M285 120 L285 160" stroke="url(#pipe1)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-
-          <!-- Stage 3 -->
           <rect x="220" y="160" width="130" height="60" fill="rgba(12,18,32,0.9)" stroke="#f5c842" stroke-width="1.5" rx="1"/>
           <text x="285" y="185" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="14" fill="#f5c842" letter-spacing="2">EXECUTE</text>
           <text x="285" y="203" text-anchor="middle" font-family="Space Mono,monospace" font-size="7.5" fill="#6b7a99" letter-spacing="1">Delivery &amp; Alignment</text>
-
-          <!-- Arrow 3 left -->
           <path d="M220 190 L180 190" stroke="url(#pipe1)" stroke-width="1.5" marker-end="url(#arrowhead-left)"/>
           <defs>
             <marker id="arrowhead-left" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
               <polygon points="6 0, 0 3, 6 6" fill="#00e5ff"/>
             </marker>
           </defs>
-
-          <!-- Stage 4 -->
           <rect x="50" y="160" width="130" height="60" fill="rgba(12,18,32,0.9)" stroke="#7b4fff" stroke-width="1.5" rx="1"/>
           <text x="115" y="185" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="14" fill="#7b4fff" letter-spacing="2">OPTIMIZE</text>
           <text x="115" y="203" text-anchor="middle" font-family="Space Mono,monospace" font-size="7.5" fill="#6b7a99" letter-spacing="1">Scale &amp; Automate</text>
-
-          <!-- Down arrow left -->
           <path d="M115 220 L115 260" stroke="url(#pipe1)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
-
-        <!-- Bottom metrics -->
         <rect x="50" y="260" width="300" height="80" fill="rgba(12,18,32,0.5)" stroke="rgba(0,229,255,0.15)" stroke-width="1" rx="1"/>
         <line x1="150" y1="260" x2="150" y2="340" stroke="rgba(0,229,255,0.1)" stroke-width="1"/>
         <line x1="250" y1="260" x2="250" y2="340" stroke="rgba(0,229,255,0.1)" stroke-width="1"/>
@@ -491,20 +479,17 @@
         <text x="300" y="292" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="22" fill="#f5c842">0</text>
         <text x="300" y="307" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="10" fill="#f5c842">Gaps</text>
         <text x="300" y="315" text-anchor="middle" font-family="Space Mono,monospace" font-size="6.5" fill="#6b7a99" letter-spacing="1">In Delivery</text>
-
-        <!-- Decorative dots -->
         <circle cx="20" cy="20" r="2" fill="#00e5ff" opacity="0.5"/>
         <circle cx="380" cy="20" r="2" fill="#00e5ff" opacity="0.5"/>
         <circle cx="20" cy="380" r="2" fill="#00e5ff" opacity="0.5"/>
         <circle cx="380" cy="380" r="2" fill="#00e5ff" opacity="0.5"/>
-
         <text x="200" y="390" text-anchor="middle" font-family="Space Mono,monospace" font-size="6" fill="rgba(107,122,153,0.5)" letter-spacing="3">PRECISION-DRIVEN FRAMEWORK</text>
       </svg>
     </div>
   </div>
 </section>
 
-<!-- WHY MTI (extra content for this page) -->
+<!-- WHY MTI -->
 <section id="why">
   <div class="section-tag">Differentiation</div>
   <h2 class="section-title">Why Organizations <em>Choose</em> MTI</h2>
@@ -630,7 +615,6 @@
 </footer>
 
 <script>
-  // Custom cursor
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
   document.addEventListener('mousemove', e => {
@@ -654,7 +638,6 @@
     });
   });
 
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
@@ -666,7 +649,6 @@
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
 
-  // Nav scroll effect
   const nav = document.querySelector('nav');
   window.addEventListener('scroll', () => {
     nav.style.borderBottomColor = window.scrollY > 50 ? 'rgba(0,229,255,0.2)' : 'rgba(0,229,255,0.12)';
